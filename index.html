@@ -2,41 +2,65 @@
 <html>
 <head>
 	<meta charset="utf-8" />
-	<title>飞机大战</title>
-	<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no,maximum-scale=1,;minimun-scale=1">
-	<link rel="stylesheet" type="text/css" href="./css/plan.css">
+	<title>小人推箱子</title>
+	<link rel="stylesheet" type="text/css" href="css/pushBox.css" />
 </head>
 <body>
-<!-- 盒子 -->
-<div id='box' class="box">
 
-	<!-- 主页面 begin-->
-	<div id="start" class="start">
-		<div id="begin" class="begin">开始游戏
-		<img src="./images/enemy1.png">
+	<div class="game">
+		
+		<div class="game-map gaming">
+			<!-- 游戏地图区域 -->
+			<canvas id="canvas" width="560" height="560"></canvas>
 		</div>
+		
+
+		<!-- 关卡序号，人物移动次数信息 -->
+		<div id="msg" class="game-info gaming">
+			<ul class="game-info-list">
+				<li>
+					<i class="nail nail1"></i>
+					<i class="nail nail2"></i>
+					<div class="card-box">
+						<span class="card-title card">目前关卡</span><span id="cardCount" class="card-count card">1</span>
+					</div>
+				</li>
+				<li class="list">
+					<i class="nail list1"></i>
+					<div class="pass-btn">
+						<span class="step-count">移动步数</span>
+						<span id="stepCount">0</span>
+					</div>
+				</li>
+				<li id="-1" class="list level">
+					<i class="nail list1"></i>
+					<div class="pass-btn">上一关</div>
+				</li>
+				<li id="1" class="list level">
+					<i class="nail list1"></i>
+					<div class="pass-btn">下一关</div>
+				</li>
+				<li id="0" class="list level">
+					<i class="nail list1"></i>
+					<div class="pass-btn">重玩本关</div>
+				</li>
+				<li class="list">
+					<i class="nail list1"></i>
+					<div id="gameIntroduce" class="pass-btn">游戏说明</div>
+				</li>
+			</ul>
+		</div>
+
+		<div id="layer" class="layer">
+			<div class="layer-box">
+				<div>请按键盘方向键(上下左右箭头)进行移动人物</div>
+				<div id="know" class="know">知道了</div>
+			</div>
+		</div>
+
 	</div>
-	<!-- 主页面 end -->
 
-	<!-- 游戏界面 -->
-	<div id="game" class="game">
-			<!-- 两个交替背景 -->
-			<div class="bg bg1"></div>
-			<div class="bg bg2"></div>
-
-			<!-- 我方飞机 -->
-			<div id="myplan" class="myplan">
-				<img class="auto" src="./images/plane.gif">
-			</div>	
-
-			<!-- 透明层 -->
-			<div id="layer" class="layer"></div>
-	</div>
-</div>
-
-
-
-<script type="text/javascript" src="./js/jquery-3.3.1.js"></script>
-<script type="text/javascript" src="./js/plan.js"></script>
+	<script type="text/javascript" src="./js/mapdata.js"></script>
+	<script type="text/javascript" src="./js/game.js"></script>
 </body>
 </html>
